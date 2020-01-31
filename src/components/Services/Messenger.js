@@ -108,7 +108,7 @@ export default class Messenger1 {
     if (resultObject.length != 0 && recObj["passKey"] == this.motherPassKey) {
       // authenticated
       //console.log("found the device");
-      loc;
+      //loc;
       for (var i = 0; i < resultObject.length; i++) {
         resultObject[i].callbackFunc(recObj);
       }
