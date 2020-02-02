@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 //import "../App.css";
-import DynamicMenu from "./DynamicMenu";
+import DynamicMenu from "../DynamicMenu";
 
 import HomeIcon from "@material-ui/icons/Home";
 import ListAltIcon from "@material-ui/icons/ListAlt";
@@ -47,7 +47,6 @@ export default function LowerLine(props) {
             to: "/",
             iconPath: "/images/home.svg"
           },
-
           {
             key: "2",
             text: "Products",
@@ -73,6 +72,13 @@ export default function LowerLine(props) {
             key: "5",
             text: "Contact Us",
             to: "/contact",
+            iconPath: "/images/contact.svg"
+          },
+
+          {
+            key: "6",
+            text: "do what you want",
+            to: "/products",
             iconPath: "/images/contact.svg"
           }
         ]}

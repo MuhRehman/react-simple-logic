@@ -1,19 +1,22 @@
 import React, { Component, Fragment } from "react";
-import TankMonitorSettings from "../TankMonitorSettings";
-import TankMonitor from "../TankMonitor";
-import Padding from "../Padding.js";
+import Padding from "../Component/Padding.js";
+
+import TankMonitor from "../Component/TankMonitor";
+import GateOpener from "../Component/GateOpener";
 import { Redirect } from "react-router";
-//import "./App.css";
 
-//import "bootstrap/dist/css/bootstrap.css";
-//import "mqtt/dist/mqtt.js";
+class Home extends Component {
+  //messengerObj = {};
 
-export default class Contact extends Component {
   constructor(props) {
     super(props);
 
+    //this.state.messengerObj.registerDevice(this.state.deviceID, this.handlerRec);
+
     // TODO don't forget to add your app and js ids
   }
+  componentWillMount() {}
+  componentDidMount() {}
 
   render() {
     if (this.props.status == false) {
@@ -21,8 +24,7 @@ export default class Contact extends Component {
       return <Redirect push to="/login" />;
     }
 
-    if (this.props.messengerObj == undefined)
-      console.log(this.props.messengerObj);
+    if (this.props.messengerObj == undefined) console.log("khali hey");
     else console.log(this.props.messengerObj);
 
     return (
@@ -30,9 +32,10 @@ export default class Contact extends Component {
         <Padding height="5px"> {} </Padding>
 
         <TankMonitor messengerObj={this.props.messengerObj} deviceID="DID02" />
-
-        <TankMonitorSettings />
+        <GateOpener messengerObj={this.props.messengerObj} deviceID="DID02" />
       </Fragment>
     );
   }
 }
+
+export default Home;

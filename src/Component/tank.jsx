@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "mqtt/mqtt";
-import "../components/App-1.css";
+import "./App-1.css";
 import { Typography } from "@material-ui/core";
 
 class Tank extends Component {

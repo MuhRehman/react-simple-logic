@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 import CSSGrid from "./CSSGrid";
-import DynamicTable from "../DynamicTable";
-import DynamicForm from "../DynamicForm";
+import DynamicTable from "../Component/DynamicTable";
+//import DynamicForm from "../DynamicForm";
 
 //import "./App.css";
 

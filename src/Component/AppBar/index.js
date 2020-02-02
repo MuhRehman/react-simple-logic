@@ -1,13 +1,10 @@
 import React, { Component, Fragment } from "react";
-import "../App.css";
-import { Paper } from "@material-ui/core";
-import { flexbox } from "@material-ui/system";
+//import "../App.css";
+
 import UpperLine from "./UpperLine";
 import LowerLine from "./LowerLine";
-import LogoBox from "./LogoBox";
-import Contact from "./Views/Contact";
 
-class YourAppBar extends Component {
+class AppBar extends Component {
   //const classes = useStyles();
 
   state = {
@@ -59,15 +56,14 @@ class YourAppBar extends Component {
   render() {
     return (
       <Fragment>
-        <Paper
+        <div
+          className="container-fluid"
           id="Parent"
-          square
-          elevation={0}
           style={{
-            display: "flex",
-            flexDirection: "column",
-            width: "100%",
-            height: flexbox,
+            //display: "flex",
+            //flexDirection: "column",
+            // width: "100%",
+            // height: flexbox,
             background: "#ffff",
             alignContent: "center"
           }}
@@ -78,15 +74,15 @@ class YourAppBar extends Component {
             status={this.props.status}
             bgColor={this.state.bgColor}
             titleFont={this.state.titleFont}
-            brandName="Choroid Solutions Pvt Ltd" // you can bring from config file
-            brandSlogan="we make 'smart things'" // you can load from config file
+            brandName="Rehman Solutions Pvt Ltd" // you can bring from config file
+            brandSlogan="we make 'Dumb things'" // you can load from config file
             logoSrc="./images/logo.png" // load from config file
           />
           <LowerLine size={this.state.size} status={this.props.status} />
-        </Paper>
+        </div>
       </Fragment>
     );
   }
 }
 
-export default YourAppBar;
+export default AppBar;

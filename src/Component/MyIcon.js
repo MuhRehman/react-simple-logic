@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 //import "../App.css";
 
-import { Paper } from "@material-ui/core";
-
 export default function MyIcon(props) {
   {
     return (

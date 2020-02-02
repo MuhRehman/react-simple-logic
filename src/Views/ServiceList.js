@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-import Comp_messengerOld from "../comp_messengerOld";
+import Comp_messengerOld from "../Component/comp_messengerOld";
 //import "./App.css";
 
 //import "bootstrap/dist/css/bootstrap.css";

@@ -13,26 +13,26 @@ import {
 } from "react-router-dom";
 //////////////////
 
-import AppArea from "./components/AppArea";
-import Padding from "./components/Padding";
-import PageArea from "./components/PageArea";
+import AppArea from "./Component/AppArea";
+import Padding from "./Component/Padding";
+import PageArea from "./Component/PageArea";
 
-import FooterArea from "./components/FooterArea";
+import FooterArea from "./Component/FooterArea";
 
-import YourAppBar from "./components/YourAppBar";
+import AppBar from "./Component/AppBar";
 //import { withWidth } from "@material-ui/core";
 //import withWidth from "@material-ui/core/withWidth";
 
-import Home from "./components/Views//Home";
-import ProductList from "./components/Views//ProductList";
-import ServiceList from "./components/Views//ServiceList";
-import Contact from "./components/Views//Contact";
-import About from "./components/Views//About";
-import DAL from "./components/Services/DAL";
-import Login from "./components/Views//Login";
-import SignUp from "./components/Views/SignUp";
-import Profile from "./components/Views/Profile";
-import Messenger1 from "./components/Services/Messenger";
+import Home from "./Views/Home";
+import ProductList from "./Views/ProductList";
+import ServiceList from "./Views/ServiceList";
+import Contact from "./Views/Contact";
+import About from "./Views/About";
+import DAL from "./Services/DAL";
+import Login from "./Views/Login";
+import SignUp from "./Views/SignUp";
+import Profile from "./Views/Profile";
+import Messenger1 from "./Services/Messenger";
 
 class App extends Component {
   state = { loggedIn: "false", user: {}, appMargin: "5px" };
@@ -94,10 +94,9 @@ class App extends Component {
 
     return (
       <Fragment>
-        {console.log("Main App View")}
         <AppArea left={this.state.appMargin} right={this.state.appMargin}>
           <Router>
-            <YourAppBar user={this.state.user} status={this.state.loggedIn} />
+            <AppBar user={this.state.user} status={this.state.loggedIn} />
             <Padding height="5px" />
 
             <PageArea>
@@ -183,16 +182,8 @@ class App extends Component {
           </Router>
 
           <Padding height="100px" />
-          <FooterArea>
-            {/*    <img
-              src={"./images/footer.png"}
-              style={{
-                width: "60%",
-                height: "60%"
-              }}
-              alt={"Footer Area"}
-            /> */}
-          </FooterArea>
+
+          <FooterArea />
         </AppArea>
       </Fragment>
     );
