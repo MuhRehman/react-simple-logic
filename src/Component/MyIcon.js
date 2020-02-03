@@ -4,11 +4,13 @@ import React, { Component } from "react";
 export default function MyIcon(props) {
   {
     return (
-      <img
+      <img stroke="green"
         src={props.path}
         style={{
           height: "24px",
-          minWidth: "32px"
+          minWidth: "32px",
+          // color:"white"
+          
         }}
         alt={"ico"}
       />
