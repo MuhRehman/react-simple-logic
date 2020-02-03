@@ -75,7 +75,7 @@ class AppBar extends Component {
             bgColor={this.state.bgColor}
             titleFont={this.state.titleFont}
             brandName="Rehman Solutions Pvt Ltd" // you can bring from config file
-            brandSlogan="we make 'Dumb things'" // you can load from config file
+            brandSlogan="we make 'smart things'" // you can load from config file
             logoSrc="./images/logo.png" // load from config file
           />
           <LowerLine size={this.state.size} status={this.props.status} />

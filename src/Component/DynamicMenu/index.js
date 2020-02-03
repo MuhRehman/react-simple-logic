@@ -1,130 +1,64 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import { List, ListItem, ListItemIcon, ListItemText } from "@material-ui/core";
 
-import withWidth from "@material-ui/core/withWidth";
-import PropTypes from "prop-types";
+// import { List, ListItem, ListItemIcon, ListItemText } from "@material-ui/core";
+
+// import withWidth from "@material-ui/core/withWidth";
+import "./form.css";
+
 import { Link } from "react-router-dom";
-import { typography } from "@material-ui/system";
+
 import MyIcon from "../MyIcon";
 
 class DynamicMenu extends React.Component {
-  state = {};
-  constructor(props) {
-    super(props);
-  }
-
   renderMenu = () => {
-    const styles = {
-      list: { paddingTop: "0px", paddingBottom: "0px" }
-    };
+    const styles = {};
 
     let model = this.props.model;
-    let menuUI;
+    let menudesign;
 
     if (this.props.direction == "horizontal") {
-      menuUI = model.map(m => {
+      menudesign = model.map(m => {
         return (
-          <List component="nav" style={styles.list}>
-            <ListItem
-              style={{ flaot: "left", color: this.props.color }}
-              button
-              component={Link}
-              to={m.to}
-            >
-              <MyIcon path={m.iconPath} />
+          <li className="nav-item">
+            <Link className="nav-link" to={m.to}>
+              <MyIcon styles={styles.icons} path={m.iconPath} />
 
-              <ListItemText primary={m.text} />
-            </ListItem>
-          </List>
+              <text>{m.text}</text>
+            </Link>
+          </li>
         );
       });
 
       return (
-        <div
-          id="container"
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            width: "100%",
-            height: "auto",
-            background: this.props.bgColor
-          }}
-        >
-          {menuUI}{" "}
-        </div>
-      );
-    }
-
-    if (this.props.direction == "vertical") {
-      menuUI = model.map(m => {
-        return (
-          <ListItem
-            style={{ flaot: "left", width: "100%", color: this.props.color }}
-            button
-            component={Link}
-            to={m.to}
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+          <a class="navbar-brand" href="#"></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
           >
-            <MyIcon path={m.iconPath} />
-
-            <ListItemText primary={m.text} />
-          </ListItem>
-        );
-      });
-
-      return (
-        <div
-          id="container"
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            width: "100%",
-            height: "auto",
-            background: this.props.bgColor
-          }}
-        >
-          <List component="nav" style={{ width: "100%" }}>
-            {" "}
-            {menuUI}{" "}
-          </List>
-        </div>
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul className="navbar-nav mr-auto mt-2 mt-lg-0"> {menudesign} </ul>
+          </div>
+        </nav>
       );
     }
   };
 
   render() {
     return (
-      <div
-        className={this.props.className}
-        style={{
-          width: "100%",
-          display: "flex",
-          flexDirection: "row",
-          //padding: "1%",
-          justifyContent: "left",
-          overflow: "hidden"
-        }}
-      >
-        <div
-          style={{
-            height: "auto",
-            width: "100%",
-            flexDirection: "column",
-            justifyContent: "space-between",
-            whiteSpace: "nowrap",
-            overflow: "visible"
-          }}
-        >
-          {" "}
-          {this.renderMenu()}
-        </div>
+      <div className="container-fluid" style={{ alignItems: "right" }}>
+        {" "}
+        {this.renderMenu()}{" "}
       </div>
     );
   }
 }
 
-DynamicMenu.propTypes = {
-  width: PropTypes.oneOf(["lg", "md", "sm", "xl", "xs"]).isRequired
-};
-
-export default withWidth()(DynamicMenu);
+export default DynamicMenu;
