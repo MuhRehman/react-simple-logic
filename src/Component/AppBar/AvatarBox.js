@@ -1,35 +1,12 @@
 import React, { Component } from "react";
-//import "../App.css";
-import { makeStyles } from "@material-ui/core/styles";
-import FolderIcon from "@material-ui/icons/Folder";
-import {
-  Paper,
-  Avatar,
-  Button,
-  Typography,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-  ListItemAvatar
-} from "@material-ui/core";
+
 import { Link } from "react-router-dom";
 
-const useStyles = makeStyles(theme => ({
-  root: {},
 
-  button: {
-    margin: theme.spacing(1)
-    //background: "white"
-    //color: "#565353"
-  },
 
-  img: { backgroundColor: "transparent" }
-}));
-
-export default function AvatarBox(props) {
+export default function OldAvatarBox(props) {
   {
-    const classes = useStyles();
+    // const classes = useStyles();
 
     function helperRenderTitle() {
       if (props.status == true) {
@@ -63,13 +40,13 @@ export default function AvatarBox(props) {
           //display: "table"
         }}
       >
-        <List
+        <div
           style={{
             paddingTop: "0px",
             paddingBottom: "0px"
           }}
         >
-          <ListItem
+          <div
             style={{
               paddingTop: "0px",
               paddingBottom: "0px",
@@ -77,24 +54,35 @@ export default function AvatarBox(props) {
               paddingRight: "5px"
             }}
           >
-            <ListItemAvatar>
-              <Avatar
-                style={{
-                  width: "50px",
-                  height: "50px",
-                  backgroundColor: "transparent"
-                }}
-                classes={{ img: classes.img }}
-                src="./images/avatar.png"
-                variant="square"
-              />
-            </ListItemAvatar>
-            <ListItemText
-              primary={helperRenderTitle()}
-              secondary={helperRenderSubTitle()}
-            />
-          </ListItem>
-        </List>
+            <div className="row">
+            <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn">
+            <img src="./images/avatar.png" width="50px" height="50px"  alt="Rehman"/>
+            <span class="caret"></span>
+            </button>
+                    <ul className="dropdown-menu dropdown-menu-right mt-2" style={{minWidth:"15rem"}}>
+                       <li className="px-3 py-2">
+                           <form className="form" role="form">
+                                
+                                <div className="form-group">
+                                    <button type="submit" className="btn btn-primary btn-block">Login</button>
+                                </div>
+                                <div className="form-group">
+                                    <button type="submit" className="btn btn-primary btn-block">Sign Up</button>
+                                </div>
+                              
+                            </form>
+                        </li>
+                     
+                    </ul>
+
+                    <ul style={{listStyle:"none", paddingLeft:"0px",paddingTop:"2px",lineHeight: "1.3"}}>
+                    <li> {helperRenderTitle()}</li>
+                    <li>{helperRenderSubTitle()}</li>
+              </ul>
+            </div>
+            
+          </div>
+        </div>
       </div>
     );
   }
