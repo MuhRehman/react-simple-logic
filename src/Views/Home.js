@@ -1,41 +1,22 @@
-import React, { Component, Fragment } from "react";
-import Padding from "../Component/Padding.js";
-
-import TankMonitor from "../Component/TankMonitor";
-import GateOpener from "../Component/GateOpener";
-import { Redirect } from "react-router";
-
-class Home extends Component {
-  //messengerObj = {};
-
-  constructor(props) {
-    super(props);
-
-    //this.state.messengerObj.registerDevice(this.state.deviceID, this.handlerRec);
-
-    // TODO don't forget to add your app and js ids
-  }
-  componentWillMount() {}
-  componentDidMount() {}
-
+import React, { Component } from 'react'
+import FirstComponent from '../Component/FirstComponent'
+import Draw from '../Component/Draw'
+export default class Home extends Component {
+ state = { boxes:5,
+    text:"Hello Rehman", }
+  handleBoxChange = (rockstar) => {
+  this.setState({boxes:rockstar.target.value});  }
+  handleTextChange = (newstar) => {
+    this.setState({text:newstar.target.value})}
   render() {
-    if (this.props.status == false) {
-      //window.location = ;
-      return <Redirect push to="/login" />;
-    }
-
-    if (this.props.messengerObj == undefined) console.log("khali hey");
-    else console.log(this.props.messengerObj);
-
-    return (
-      <Fragment>
-        <Padding height="5px"> {} </Padding>
-
-        <TankMonitor messengerObj={this.props.messengerObj} deviceID="DID02" />
-        <GateOpener messengerObj={this.props.messengerObj} deviceID="DID02" />
-      </Fragment>
-    );
+    return (<div> <FirstComponent 
+     valueBox={this.state.boxes}
+      valueText={this.state.text}
+        handlerBox={this.handleBoxChange}
+         handlerText={this.handleTextChange}/>
+        <Draw   ubaid={this.props.rehmanName} 
+         boxes={this.state.boxes} 
+         text={this.state.text}></Draw></div>
+    )
   }
 }
-
-export default Home;
