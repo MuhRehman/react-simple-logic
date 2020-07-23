@@ -10,7 +10,7 @@
     "bootstrap": "^4.2.1",
     "firebase": "^7.2.3",
     "mqtt": "^2.18.8",
-    "parse": "^1.11.1",
+    "parse": "^2.10.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-native-mqtt": "0.1.0-beta4",
